@@ -17,6 +17,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        float inputZ = Input.GetAxis("Vertical");
+        float inputX = Input.GetAxis("Horizontal");
+        Debug.Log(inputZ);
+
+        transform.Translate(Vector3.forward * Time.deltaTime * inputZ * speed * 2);
+        transform.Rotate(Vector3.up * Time.deltaTime * inputX * speed * 10);
     }
 }
