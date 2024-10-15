@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 10f;
+    private Vector3 input;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,6 @@ public class PlayerController : MonoBehaviour
         Debug.Log(inputZ);
 
         transform.Translate(Vector3.forward * Time.deltaTime * inputZ * speed * 2);
-        transform.Rotate(Vector3.up * Time.deltaTime * inputX * speed * 10);
+        transform.Rotate(Vector3.up * Time.deltaTime * inputX * inputZ * speed * 10);
     }
 }
